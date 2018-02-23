@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\LandTile.cs">
     <Files>
-      <File FileName="Assets\LandTile.cs" Line="32" Column="5" />
-      <File FileName="Assets\MouseCommands.cs" Line="21" Column="4" />
-      <File FileName="Assets\EmployeeClass.cs" Line="8" Column="2" />
-      <File FileName="Assets\Player.cs" Line="13" Column="16" />
+      <File FileName="Assets\LandTile.cs" Line="34" Column="35" />
+      <File FileName="Assets\MouseCommands.cs" Line="1" Column="1" />
+      <File FileName="Assets\EmployeeClass.cs" Line="1" Column="1" />
+      <File FileName="Assets\Player.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

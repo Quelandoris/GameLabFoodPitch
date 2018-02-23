@@ -8,8 +8,10 @@ public class LandTile : MonoBehaviour {
 	public GameObject owner;
 	public float accessibility;
 	public float cost;
-	public float size;
 	public Transform uiPanel;
+	public Text ownerT;
+	public Text costT;
+	public Text accT;
 	bool mousing=false;
 
 	// Use this for initialization
@@ -27,6 +29,9 @@ public class LandTile : MonoBehaviour {
 	void OnMouseEnter(){
 		mousing = true;
 		uiPanel.gameObject.SetActive (true);
+		accT.text = accessibility.ToString () + "%";
+		costT.text = "$" + cost.ToString ();
+		ownerT.text = owner.ToString ();
 	}
 	void OnMouseExit(){
 		mousing = false;
