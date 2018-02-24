@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+	//Vars
 	public enum PlayerRoles{
 	None, Burger, Enchilada, French
 	}
