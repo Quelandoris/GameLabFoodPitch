@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public Sprite Headshot;
+	public enum PlayerRoles{
+	None, Burger, Enchilada, French
+	}
+	public PlayerRoles PlayerRole = PlayerRoles.None;
+	public Sprite[] Headshot;
 	public int Money;
 	public int Research;
 	//research target
 	//public research researchTarget
 	void start(){
-		Money = 1000;
 		Research = 0;
 	}
 }
