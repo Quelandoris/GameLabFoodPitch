@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+	public Sprite Headshot;
 	public int Money;
 	public int Research;
 	//research target
