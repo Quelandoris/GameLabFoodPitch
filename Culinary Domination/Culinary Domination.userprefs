@@ -5,7 +5,8 @@
       <File FileName="Assets\LandTile.cs" Line="1" Column="1" />
       <File FileName="Assets\MouseCommands.cs" Line="1" Column="1" />
       <File FileName="Assets\EmployeeClass.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player.cs" Line="17" Column="1" />
+      <File FileName="Assets\Player.cs" Line="18" Column="3" />
+      <File FileName="Assets\PanelScript.cs" Line="13" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
