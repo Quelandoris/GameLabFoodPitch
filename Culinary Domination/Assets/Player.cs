@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
@@ -11,10 +12,18 @@ public class Player : MonoBehaviour {
 	public PlayerRoles PlayerRole = PlayerRoles.None;
 	public Sprite[] Headshot;
 	public int Money;
-	public int Research;
+	public int income;
+	public Text MoneyT,IncomeT;
 	//research target
 	//public research researchTarget
 	void start(){
-		Research = 0;
+		income = 0;
+	}
+	void Update(){
+		//UI elements
+		MoneyT.text="$" + Money.ToString();
+		if (income > 0) IncomeT.text = "+ $" + Mathf.Abs (income).ToString ();
+		else if (income < 0) IncomeT.text = "- $" + Mathf.Abs (income).ToString ();
+		else IncomeT.text = "$0";
 	}
 }
