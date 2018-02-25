@@ -7,6 +7,7 @@ public class MouseCommands : MonoBehaviour {
 	Ray ray;
 	RaycastHit hit;
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,7 +19,7 @@ public class MouseCommands : MonoBehaviour {
 		if (Physics.Raycast (ray, out hit)) {
 		}
 		else {
-
+			
 		}
 	}
 }
