@@ -26,6 +26,10 @@ public class Player : MonoBehaviour {
 		EventManager.TurnChange -= TurnChange;
 	}
 	void Update(){
+		//esc to close
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			Application.Quit ();
+		}
 		//UI elements
 		MoneyT.text="$" + Money.ToString();
 		if (income > 0) IncomeT.text = "+ $" + Mathf.Abs (income).ToString ();
