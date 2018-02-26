@@ -37,4 +37,7 @@ public class ButtonScript : MonoBehaviour {
 		curTile = null;
 		gameObject.SetActive (false);
 	}
+	public void EndTurnbutton(){
+		EventManager.EndTurn ();
+	}
 }

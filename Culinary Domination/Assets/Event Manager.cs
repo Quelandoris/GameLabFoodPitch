@@ -13,8 +13,7 @@ public class EventManager : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public static void EndTurn(){
+		EventManager.TurnChange ();
 	}
 }

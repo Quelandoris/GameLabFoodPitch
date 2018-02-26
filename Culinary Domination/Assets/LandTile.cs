@@ -96,7 +96,7 @@ public class LandTile : MonoBehaviour
 	//Call when a turn ends
 	void TurnEnd ()
 	{
-		//
+		cost += 20;
 	}
 	public void HireButton(int c){
 		if (player.Money >= 150) {
