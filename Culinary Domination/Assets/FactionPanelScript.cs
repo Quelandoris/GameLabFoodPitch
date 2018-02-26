@@ -6,7 +6,7 @@ public class FactionPanelScript : MonoBehaviour {
 
 	// Use this for initialization
 	public void ChooseFaction (int newPlayerRole) {
-		Player pla = GameObject.FindObjectOfType<Player>().GetComponent<Player>();
+		Player pla = Camera.main.GetComponent<Player>();
 		if (newPlayerRole == 1) {
 			pla.PlayerRole = Player.PlayerRoles.Burger;
 		}

@@ -12,6 +12,7 @@ public class LandTile : MonoBehaviour
 	public float accessibility;
 	public int cost;
 	public Transform uiPanel;
+	public Image UIImage0,UIImage1,UIImage2,UIImage3;
 	public Text ownerT;
 	public Text costT;
 	public Text accT;
@@ -60,11 +61,42 @@ public class LandTile : MonoBehaviour
 			if (player.PlayerRole == Player.PlayerRoles.Burger) costT.text = "$" + (cost * 0.85).ToString ();
 			else costT.text = "$" + cost.ToString ();
 
-			if (owner == null) ownerT.text = "None";
-			else if (owner.PlayerRole == Player.PlayerRoles.None) ownerT.text = "None";
-			else if (owner.PlayerRole == Player.PlayerRoles.Burger) ownerT.text = "Donald McRonald";
-			else if (owner.PlayerRole == Player.PlayerRoles.Enchilada) ownerT.text = "Daniella Martinez";
-			else if (owner.PlayerRole == Player.PlayerRoles.French) ownerT.text = "Gordon Ducasse";
+		if (owner == null) {
+			ownerT.text = "None";
+			UIImage0.gameObject.SetActive (true);
+			UIImage1.gameObject.SetActive (false);
+			UIImage2.gameObject.SetActive (false);
+			UIImage3.gameObject.SetActive (false);
+		}
+		else if (owner.PlayerRole == Player.PlayerRoles.None) {
+			ownerT.text = "None";
+			UIImage0.gameObject.SetActive (true);
+			UIImage1.gameObject.SetActive (false);
+			UIImage2.gameObject.SetActive (false);
+			UIImage3.gameObject.SetActive (false);
+		}
+		else if (owner.PlayerRole == Player.PlayerRoles.Burger) {
+
+			ownerT.text = "Donald McRonald";
+			UIImage0.gameObject.SetActive (false);
+			UIImage1.gameObject.SetActive (true);
+			UIImage2.gameObject.SetActive (false);
+			UIImage3.gameObject.SetActive (false);
+		}
+		else if (owner.PlayerRole == Player.PlayerRoles.Enchilada) {
+			ownerT.text = "Daniella Martinez";
+			UIImage0.gameObject.SetActive (false);
+			UIImage1.gameObject.SetActive (false);
+			UIImage2.gameObject.SetActive (true);
+			UIImage3.gameObject.SetActive (false);
+		}
+		else if (owner.PlayerRole == Player.PlayerRoles.French) {
+			ownerT.text = "Gordon Ducasse";
+			UIImage0.gameObject.SetActive (false);
+			UIImage1.gameObject.SetActive (false);
+			UIImage2.gameObject.SetActive (false);
+			UIImage3.gameObject.SetActive (true);
+		}
 	}
 
 	void OnMouseExit ()
@@ -91,7 +123,7 @@ public class LandTile : MonoBehaviour
 
 	public void ConfirmationWindowConfirm ()
 	{
-		owner = FindObjectOfType<Player> ();
+		owner = Camera.main.GetComponent<Player>();
 	}
 	//Call when a turn ends
 	void TurnEnd ()

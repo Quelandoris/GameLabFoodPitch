@@ -13,7 +13,7 @@ public class EventManager : MonoBehaviour {
 		
 	}
 	
-	public static void EndTurn(){
+	public void EndTurn(){
 		EventManager.TurnChange ();
 	}
 }

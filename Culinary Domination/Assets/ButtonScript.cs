@@ -29,15 +29,12 @@ public class ButtonScript : MonoBehaviour {
 			player.Money -= curTile.cost;
 			curTile.GetComponent<SpriteRenderer> ().color = Color.blue;
 			curTile.ConfirmationWindowConfirm ();
-			FindObjectOfType<Player> ().income += curTile.income;
+			player.income += curTile.income;
 			gameObject.SetActive (false);
 		}
 	}
 	public void CancelButton(){
 		curTile = null;
 		gameObject.SetActive (false);
-	}
-	public void EndTurnbutton(){
-		EventManager.EndTurn ();
 	}
 }

@@ -5,13 +5,20 @@ using UnityEngine;
 public class AIScript : MonoBehaviour {
     public bool EnemyTurn;
     public int Tiles = 0;
-    public GameObject[] objects;
+    public LandTile[] objects;
     public Sprite AISprite;
+	Player AIpla;
 
 
     // Use this for initialization
     void Start () {
-		
+		AIpla = this.GetComponent<Player> ();
+	}
+	void OnEnable(){
+		EventManager.TurnChange += turnChange;
+	}
+	void OnDisable(){
+		EventManager.TurnChange -= turnChange;
 	}
 	
 	// Update is called once per frame
@@ -46,20 +53,19 @@ public class AIScript : MonoBehaviour {
 
             }
 
-
-
         }
 	}
-    void Purchase(GameObject Current)
+	void Purchase(LandTile Current)
     {
-        Player AI = new Player();
-        AI.PlayerRole = Player.PlayerRoles.French;
-        Current.GetComponent< LandTile > ().owner = AI;
+        Current.owner = AIpla;
         EnemyTurn = false;
-        Current.GetComponent<LandTile>().hire1 = AI;
-        Current.GetComponent<LandTile>().hire3 = AI;
+        Current.GetComponent<LandTile>().hire1 = AIpla;
+        Current.GetComponent<LandTile>().hire3 = AIpla;
         Tiles++;
         Current.GetComponent<SpriteRenderer>().sprite = AISprite;
 
     }
+	void turnChange(){
+		EnemyTurn = true;
+	}
 }
